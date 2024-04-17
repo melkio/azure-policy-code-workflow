@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "displayName": "Require a tag with specific values on resource groups",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enforces existence of a tag with only allowed values on resource groups.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Tags"
+    },
+    "version": "1.0.0",
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name",
+          "description": "Name of the tag, such as 'environment'"
+        }
+      },
+      "allowedTagValues": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Tag Value",
+          "description": "Allowed values of the tag"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName'), ']')]",
+            "notIn": "[parameters('allowedTagValues')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    },
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/e7a5b61c-3762-48cf-a20b-961833e3221f",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "e7a5b61c-3762-48cf-a20b-961833e3221f"
+}
