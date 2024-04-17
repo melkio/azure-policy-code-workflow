@@ -1,0 +1,17 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+      },
+      {
+        "field": "[concat('tags[', parameters('tagName'), ']')]",
+        "notIn": "[parameters('allowedTagValues')]"
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}
