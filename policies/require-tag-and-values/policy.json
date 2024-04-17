@@ -8,7 +8,6 @@
       "version": "1.0.0",
       "category": "Tags"
     },
-    "version": "1.0.0",
     "parameters": {
       "tagName": {
         "type": "String",
