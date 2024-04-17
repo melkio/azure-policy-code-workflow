@@ -46,7 +46,7 @@
       "1.0.0"
     ]
   },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/e7a5b61c-3762-48cf-a20b-961833e3221f",
+  "id": "/subscriptions/4f28e852-45ad-4543-8a9e-fab850b8d253/providers/Microsoft.Authorization/policyDefinitions/234aec05-7441-4702-9d21-408b861d742d",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "e7a5b61c-3762-48cf-a20b-961833e3221f"
+  "name": "234aec05-7441-4702-9d21-408b861d742d",
 }
